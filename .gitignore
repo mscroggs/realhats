@@ -5,3 +5,5 @@
 .*.swp
 *.sty
 *.zip
+tmp
+tmp/*
