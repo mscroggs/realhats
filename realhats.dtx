@@ -21,25 +21,27 @@
 %\fi
 
 %\lstinline{realhats} is a package for \LaTeX{} that makes the \lstinline{\hat} put real hats on symbols.
-%For example, the input \lstinline@\hat{\vec{a}}=\hat{\vec{b}}@ will produce the output:
-%\[\hat{\vec{a}}=\hat{\vec{b}}\]
+%For example, the input \lstinline@\hat{a}=\hat{b}@ will produce the output:
+%\[\hat{a}=\hat{b}\]
+%To make a vector with a hat, the input \lstinline@\hat{\mathbf{a}}@:
+%\[\hat{\mathbf{a}}\]
 %
 %The command \lstinline{\hat} will chose a hat randomly from five hats:
 %\begin{itemize}
-%\item \(\hatn{\vec{a}}{0}\) - A beret
-%\item \(\hatn{\vec{a}}{1}\) - A Santa hat
-%\item \(\hatn{\vec{a}}{2}\) - A Scottish hat
-%\item \(\hatn{\vec{a}}{3}\) - A sombrero
-%\item \(\hatn{\vec{a}}{4}\) - A wizard's hat
+%\item \(\hatn{a}{0}\) - A beret
+%\item \(\hatn{a}{1}\) - A Santa hat
+%\item \(\hatn{a}{2}\) - A Scottish hat
+%\item \(\hatn{a}{3}\) - A sombrero
+%\item \(\hatn{a}{4}\) - A wizard's hat
 %\end{itemize}
 %
 %Vectors can be given a non-random hat, using the command \lstinline{\hatn}:
 %\begin{itemize}
-%\item \lstinline@\hatn{\vec{a}}{0}@ produces \(\hatn{\vec{a}}{0}\)
-%\item \lstinline@\hatn{\vec{a}}{1}@ produces \(\hatn{\vec{a}}{1}\)
-%\item \lstinline@\hatn{\vec{a}}{2}@ produces \(\hatn{\vec{a}}{2}\)
-%\item \lstinline@\hatn{\vec{a}}{3}@ produces \(\hatn{\vec{a}}{3}\)
-%\item \lstinline@\hatn{\vec{a}}{4}@ produces \(\hatn{\vec{a}}{4}\)
+%\item \lstinline@\hatn{a}{0}@ produces \(\hatn{a}{0}\)
+%\item \lstinline@\hatn{a}{1}@ produces \(\hatn{a}{1}\)
+%\item \lstinline@\hatn{a}{2}@ produces \(\hatn{a}{2}\)
+%\item \lstinline@\hatn{a}{3}@ produces \(\hatn{a}{3}\)
+%\item \lstinline@\hatn{a}{4}@ produces \(\hatn{a}{4}\)
 %\end{itemize}
 %
 %\iffalse
@@ -75,7 +77,6 @@
 \newlength{\wid}
 \newlength{\hei}
 
-\renewcommand{\vec}[1]{\mathbf#1}
 \renewcommand{\hat}[1]{\rand\hatn{#1}{\arabic{rand}}}
 
 \newcommand{\hatn}[2]{%
@@ -95,6 +96,20 @@
 \ifthenelse{\equal{#1}{\vec{k}}}{\addtolength{\xx}{-1pt}\addtolength{\hei}{2pt}}{}%
 \ifthenelse{\equal{#1}{\vec{t}}}{\addtolength{\hei}{2pt}}{}%
 \ifthenelse{\equal{#1}{\vec{l}}}{\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{\mathbf{b}}}{\addtolength{\xx}{-1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{\mathbf{d}}}{\addtolength{\xx}{1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{\mathbf{f}}}{\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{\mathbf{h}}}{\addtolength{\xx}{-1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{\mathbf{k}}}{\addtolength{\xx}{-1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{\mathbf{t}}}{\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{\mathbf{l}}}{\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{b}}{\addtolength{\xx}{-1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{d}}{\addtolength{\xx}{1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{f}}{\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{h}}{\addtolength{\xx}{-1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{k}}{\addtolength{\xx}{-1pt}\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{t}}{\addtolength{\hei}{2pt}}{}%
+\ifthenelse{\equal{#1}{l}}{\addtolength{\hei}{2pt}}{}%
 #1%
 \begin{tikzpicture}[overlay,x=1cm,y=1cm]
 \clip (-1,0) rectangle (1,1);
