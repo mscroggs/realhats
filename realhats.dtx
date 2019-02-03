@@ -20,10 +20,28 @@
 %SOFTWARE.
 %\fi
 
-%\lstinline{realhats} is a package for \LaTeX{} that makes the \lstinline{\hat} put real hats on symbols:
+%\lstinline{realhats} is a package for \LaTeX{} that makes the \lstinline{\hat} put real hats on symbols.
+%For example, the input \lstinline@\hat{\vec{a}}=\hat{\vec{b}}@ will produce the output:
 %\[\hat{\vec{a}}=\hat{\vec{b}}\]
-
-
+%
+%The command \lstinline{\hat} will chose a hat randomly from five hats:
+%\begin{itemize}
+%\item \(\hatn{\vec{a}}{0}\) - A beret
+%\item \(\hatn{\vec{a}}{1}\) - A Santa hat
+%\item \(\hatn{\vec{a}}{2}\) - A Scottish hat
+%\item \(\hatn{\vec{a}}{3}\) - A sombrero
+%\item \(\hatn{\vec{a}}{4}\) - A wizard's hat
+%\end{itemize}
+%
+%Vectors can be given a non-random hat, using the command \lstinline{\hatn}:
+%\begin{itemize}
+%\item \lstinline@\hatn{\vec{a}}{0}@ produces \(\hatn{\vec{a}}{0}\)
+%\item \lstinline@\hatn{\vec{a}}{1}@ produces \(\hatn{\vec{a}}{1}\)
+%\item \lstinline@\hatn{\vec{a}}{2}@ produces \(\hatn{\vec{a}}{2}\)
+%\item \lstinline@\hatn{\vec{a}}{3}@ produces \(\hatn{\vec{a}}{3}\)
+%\item \lstinline@\hatn{\vec{a}}{4}@ produces \(\hatn{\vec{a}}{4}\)
+%\end{itemize}
+%
 %\iffalse
 %<*documentation>
 \documentclass{article}
