@@ -18,4 +18,4 @@ doc:
 	mkdir -p $(TEXOUT);pdflatex -output-directory=$(TEXOUT) realhats.dtx
 
 zip:
-	mkdir -p $(OUTPUT);rm -rf $(MYTMP);mkdir -p $(MYTMP)/zip/$(THIS);cd $(MYTMP)/zip;cp -r $(HERE)/hats $(THIS);cp $(HERE)/README.md $(TEXOUT)/realhats.pdf $(HERE)/realhats.dtx $(HERE)/realhats.ins $(THIS);zip -r realhats .;cp realhats.zip $(OUTPUT)
+	mkdir -p $(OUTPUT);rm -rf $(MYTMP);mkdir -p $(MYTMP)/zip/$(THIS);cd $(MYTMP)/zip;cp -r $(HERE)/hats $(THIS);cp -r $(HERE)/readme_images $(THIS);cp $(HERE)/README.md $(TEXOUT)/realhats.pdf $(HERE)/realhats.dtx $(HERE)/realhats.ins $(THIS);zip -r realhats .;cp realhats.zip $(OUTPUT)
