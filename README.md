@@ -13,6 +13,8 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.jpg)
 
 ## Changelog
+### Next version
+* Replaced tikz with stackengine
 ### Version 1.0
 * First working version of package
 * Added five hats
