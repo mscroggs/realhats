@@ -1,6 +1,7 @@
 # realhats LaTeX package
 
 realhats is a package for LaTeX that makes `\hat` put real hats on symbols.
+A reasonably up-to-date version of realhats is available from the [CTAN archive](https://ctan.org/pkg/realhats).
 
 Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscroggs) and [Adam Townsend](https://github.com/Pecnut).
 
