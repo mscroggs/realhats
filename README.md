@@ -19,4 +19,4 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 
 
 ## Licensing
-This work may be distributed and/or modified under the conditions of the [MIT license](LICENSE.md).
+This work may be distributed and/or modified under the conditions of the [MIT license](LICENSE.txt).
