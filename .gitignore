@@ -6,3 +6,5 @@
 *.sty
 *.zip
 *.synctex.gz
+tmp
+tmp/*
