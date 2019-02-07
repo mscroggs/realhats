@@ -14,11 +14,11 @@ img.realhat {width:100px;position:relative}
 <body>
 <div class='head'>realhats<?php
 $hats = Array(
-    "<img class='realhat' style='left:-62px;top:-25px' src='realhats-beret-small.png'>",
-    "<img class='realhat' style='left:-62px;top:-25px' src='realhats-scottish-small.png'>",
-    "<img class='realhat' style='left:-78px;top:-50px' src='realhats-witch-small.png'>",
-    "<img class='realhat' style='left:-65px;top:-45px' src='realhats-santa-small.png'>",
-    "<img class='realhat' style='left:-80px;top:-40px' src='realhats-sombrero-small.png'>"
+    "<img class='realhat' style='left:-62px;top:-25px' src='realhats-beret.png'>",
+    "<img class='realhat' style='left:-62px;top:-25px' src='realhats-scottish.png'>",
+    "<img class='realhat' style='left:-78px;top:-50px' src='realhats-witch.png'>",
+    "<img class='realhat' style='left:-65px;top:-45px' src='realhats-santa.png'>",
+    "<img class='realhat' style='left:-80px;top:-40px' src='realhats-sombrero.png'>"
 );
 echo($hats[array_rand($hats)]);
 ?></div>
