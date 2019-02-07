@@ -65,7 +65,7 @@
 %\iffalse
 %<*realhats>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{realhats}[2018/02/02 realhats]
+\ProvidesPackage{realhats}[2019/02/02 realhats]
 
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
@@ -80,14 +80,25 @@
 
 \renewcommand{\hat}[1]{\rand\hatn{#1}{\arabic{rand}}}
 
+<<<<<<< HEAD
 \newcommand{\hatn}[2]{%
+=======
+\newcommand{\hatn}[2]{\hatnoptions{#1}{#2}{0ex}{0ex}}
+
+\newcommand{\hatnoptions}[4]{%
+>>>>>>> 8b79c2e570b717be3def05ad0a36b2162a425363
 \setlength{\hshif}{1pt}
 \ifthenelse{\equal{#2}{0}}{\renewcommand\myhat{hats/realhats-beret}\setlength{\vshif}{-0.6ex} \setlength{\hshif}{0.5ex} }{}%
 \ifthenelse{\equal{#2}{1}}{\renewcommand\myhat{hats/realhats-santa}\setlength{\vshif}{-0.1ex} }{}%
 \ifthenelse{\equal{#2}{2}}{\renewcommand\myhat{hats/realhats-scottish}\setlength{\vshif}{-0.7ex} \setlength{\hshif}{0.6ex}}{}%
 \ifthenelse{\equal{#2}{3}}{\renewcommand\myhat{hats/realhats-sombrero}\setlength{\vshif}{-0.17ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{4}}{\renewcommand\myhat{hats/realhats-witch}\setlength{\vshif}{-0.12ex} \addtolength{\hshif}{-1pt}}{}%
+<<<<<<< HEAD
 \ifthenelse{\equal{#2}{5}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.6ex} \addtolength{\hshif}{-1pt}}{}%
+=======
+\addtolength{\hshif}{#3}%
+\addtolength{\vshif}{#4}%
+>>>>>>> 8b79c2e570b717be3def05ad0a36b2162a425363
 \stackMath %
 \stackon[\vshif]{#1}{\hspace{\hshif}\includegraphics[width=2ex]{\myhat}}
 }
