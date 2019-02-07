@@ -26,13 +26,14 @@
 %To make a vector with a hat, the input \lstinline@\hat{\mathbf{a}}@ produces:
 %\[\hat{\mathbf{a}}\]
 %
-%The command \lstinline{\hat} will choose a hat randomly from five hats:
+%The command \lstinline{\hat} will choose a hat randomly from six hats:
 %\begin{itemize}
 %\item \(\hatn{a}{0}\) - A beret
 %\item \(\hatn{a}{1}\) - A Santa hat
 %\item \(\hatn{a}{2}\) - A Scottish hat
 %\item \(\hatn{a}{3}\) - A sombrero
 %\item \(\hatn{a}{4}\) - A wizard's hat
+%\item \(\hatn{a}{5}\) - A top hat
 %\end{itemize}
 %
 %Variables can be given a non-random hat, using the command \lstinline{\hatn}:
@@ -42,6 +43,7 @@
 %\item \lstinline@\hatn{a}{2}@ produces \(\hatn{a}{2}\)
 %\item \lstinline@\hatn{a}{3}@ produces \(\hatn{a}{3}\)
 %\item \lstinline@\hatn{a}{4}@ produces \(\hatn{a}{4}\)
+%\item \lstinline@\hatn{a}{5}@ produces \(\hatn{a}{5}\)
 %\end{itemize}
 %
 %\iffalse
@@ -68,7 +70,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
-\RequirePackage[first=0, last=4]{lcg}
+\RequirePackage[first=0, last=5]{lcg}
 \RequirePackage{calc}
 \RequirePackage{stackengine}
 
@@ -79,13 +81,13 @@
 \renewcommand{\hat}[1]{\rand\hatn{#1}{\arabic{rand}}}
 
 \newcommand{\hatn}[2]{%
-<<<<<<< HEAD
 \setlength{\hshif}{1pt}
 \ifthenelse{\equal{#2}{0}}{\renewcommand\myhat{hats/realhats-beret}\setlength{\vshif}{-0.6ex} \setlength{\hshif}{0.5ex} }{}%
 \ifthenelse{\equal{#2}{1}}{\renewcommand\myhat{hats/realhats-santa}\setlength{\vshif}{-0.1ex} }{}%
 \ifthenelse{\equal{#2}{2}}{\renewcommand\myhat{hats/realhats-scottish}\setlength{\vshif}{-0.7ex} \setlength{\hshif}{0.6ex}}{}%
 \ifthenelse{\equal{#2}{3}}{\renewcommand\myhat{hats/realhats-sombrero}\setlength{\vshif}{-0.17ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{4}}{\renewcommand\myhat{hats/realhats-witch}\setlength{\vshif}{-0.12ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{5}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.6ex} \addtolength{\hshif}{-1pt}}{}%
 \stackMath %
 \stackon[\vshif]{#1}{\hspace{\hshif}\includegraphics[width=2ex]{\myhat}}
 }
