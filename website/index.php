@@ -3,7 +3,7 @@
 <title>realhats</title>
 <style type='text/css'>
 body {background-color:#050607;font-family:monospace;text-align:center}
-.head {color:#CC00FF;font-size:50pt;padding-left:100px}
+.head {color:#CC00FF;font-size:50pt}
 .head u {text-decoration:none;color:#FF00CC}
 .links {font-size:30pt;color:#00CCFF}
 a,a:active,a:visited,a:link {color:#FFFFFF}
