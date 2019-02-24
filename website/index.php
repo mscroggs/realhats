@@ -16,13 +16,17 @@ img.realhat {width:60px;position:relative;margin-right:-60px}
 <div class='head'>\usepackage{<u>realhats</u><?php
 $hats = Array(
     "<img class='realhat' style='left:-40px;top:-15px' src='realhats-beret.png'>",
-    "<img class='realhat' style='left:-40px;top:-15px' src='realhats-scottish.png'>",
-    "<img class='realhat' style='left:-52px;top:-30px' src='realhats-witch.png'>",
+    "<img class='realhat' style='left:-50px;top:-25px' src='realhats-cowboy.png'>",
+    "<img class='realhat' style='left:-48px;top:-25px' src='realhats-fez.png'>",
+    "<img class='realhat' style='left:-44px;top:-15px' src='realhats-makelatexgreatagain.png'>",
     "<img class='realhat' style='left:-42px;top:-25px' src='realhats-santa.png'>",
+    "<img class='realhat' style='left:-40px;top:-15px' src='realhats-scottish.png'>",
     "<img class='realhat' style='left:-51px;top:-20px' src='realhats-sombrero.png'>",
-    "<img class='realhat' style='left:-55px;top:-12px' src='realhats-tophat.png'>"
+    "<img class='realhat' style='left:-55px;top:-12px' src='realhats-tophat.png'>",
+    "<img class='realhat' style='left:-52px;top:-30px' src='realhats-witch.png'>"
 );
-echo($hats[array_rand($hats)]);
+//echo($hats[array_rand($hats)]);
+echo($hats[3]);
 ?>}</div>
 <div class='links'>
 <a href='https://github.com/mscroggs/realhats'>GitHub</a>
