@@ -32,4 +32,4 @@ html:
 
 readme:
 	pdflatex -output-directory=readme_images readme_images/hats.tex
-	convert -density 200 readme_images/hats.pdf[0] -quality 100 readme_images/hats.png
+	convert -density 250 readme_images/hats.pdf[0] -quality 100 readme_images/hats.png
