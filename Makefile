@@ -25,7 +25,7 @@ zip:
 	mkdir $(MYTMP)/zip/$(THIS)/readme_images
 	cp $(HERE)/readme_images/*.png $(MYTMP)/zip/$(THIS)/readme_images/
 	cp $(HERE)/README.md $(TEXOUT)/realhats.pdf $(HERE)/realhats.dtx $(HERE)/realhats.ins $(MYTMP)/zip/$(THIS)
-	zip -r $(OUTPUT)/realhats $(MYTMP)/zip
+	cd $(MYTMP)/zip; zip -r $(OUTPUT)/realhats .
 
 html:
 	for i in hats/*.png ; do convert "$$i" -resize 100x500 website/"$${i#hats/}" ; done
