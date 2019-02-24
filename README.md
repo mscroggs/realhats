@@ -13,7 +13,7 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
-### Next version
+### Version 2.0
 * Replaced tikz with stackengine
 * Added top hat, make LaTeX great again hats, fez, cowboy hat
 ### Version 1.0
