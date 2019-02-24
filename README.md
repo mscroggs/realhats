@@ -10,7 +10,7 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 * Pedro Horse
 
 ## Example
-![Letters with hats on](readme_images/hats.jpg)
+![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
 ### Next version

@@ -70,7 +70,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
-\RequirePackage[first=0, last=5]{lcg}
+\RequirePackage[first=0, last=6]{lcg}
 \RequirePackage{calc}
 \RequirePackage{stackengine}
 
@@ -90,6 +90,7 @@
 \ifthenelse{\equal{#2}{3}}{\renewcommand\myhat{hats/realhats-sombrero}\setlength{\vshif}{-0.17ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{4}}{\renewcommand\myhat{hats/realhats-witch}\setlength{\vshif}{-0.12ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{5}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.6ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{6}}{\renewcommand\myhat{hats/realhats-makelatexgreatagain}\setlength{\vshif}{-0.6ex} \addtolength{\hshif}{-1pt}}{}%
 \addtolength{\hshif}{#3}%
 \addtolength{\vshif}{#4}%
 \stackMath %
