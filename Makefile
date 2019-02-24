@@ -5,9 +5,9 @@ MYTMP = $(HERE)/tmp
 TEXOUT = $(OUTPUT)
 STYOUT = $(OUTPUT)
 
-.PHONY: all ctan sty doc zip html readme
+.PHONY: all sty doc readme ctan zip html
 
-all: sty doc ctan html readme
+all: sty doc readme ctan html
 
 ctan: sty doc readme zip
 
@@ -25,8 +25,7 @@ zip:
 	mkdir $(MYTMP)/zip/$(THIS)/readme_images
 	cp $(HERE)/readme_images/*.png $(MYTMP)/zip/$(THIS)/readme_images/
 	cp $(HERE)/README.md $(TEXOUT)/realhats.pdf $(HERE)/realhats.dtx $(HERE)/realhats.ins $(MYTMP)/zip/$(THIS)
-	zip -r realhats $(MYTMP)/zip
-	cp $(MYTMP)/zip/realhats.zip $(OUTPUT)
+	zip -r $(OUTPUT)/realhats $(MYTMP)/zip
 
 html:
 	for i in hats/*.png ; do convert "$$i" -resize 100x500 website/"$${i#hats/}" ; done
