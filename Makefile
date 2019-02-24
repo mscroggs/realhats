@@ -5,11 +5,11 @@ MYTMP = $(HERE)/tmp
 TEXOUT = $(OUTPUT)
 STYOUT = $(OUTPUT)
 
-.PHONY: all sty doc readme ctan zip html
+.PHONY: all sty doc ctan zip html
 
-all: sty doc readme ctan html
+all: sty doc ctan html
 
-ctan: sty doc readme zip
+ctan: sty doc zip
 
 sty:
 	mkdir -p $(STYOUT);latex -output-directory=$(STYOUT) realhats.ins
@@ -29,7 +29,3 @@ zip:
 
 html:
 	for i in hats/*.png ; do convert "$$i" -resize 100x500 website/"$${i#hats/}" ; done
-
-readme:
-	pdflatex -output-directory=readme_images readme_images/hats.tex
-	convert -density 250 readme_images/hats.pdf[0] -quality 100 readme_images/hats.png
