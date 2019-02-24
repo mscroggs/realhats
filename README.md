@@ -15,7 +15,7 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ## Changelog
 ### Next version
 * Replaced tikz with stackengine
-* Added top hat
+* Added top hat, make LaTeX great again hats, fez, cowboy hat
 ### Version 1.0
 * First working version of package
 * Added five hats
