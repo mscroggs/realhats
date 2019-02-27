@@ -25,8 +25,7 @@ $hats = Array(
     "<img class='realhat' style='left:-55px;top:-12px' src='realhats-tophat.png'>",
     "<img class='realhat' style='left:-52px;top:-30px' src='realhats-witch.png'>"
 );
-//echo($hats[array_rand($hats)]);
-echo($hats[3]);
+echo($hats[array_rand($hats)]);
 ?>}</div>
 <div class='links'>
 <a href='https://github.com/mscroggs/realhats'>GitHub</a>
