@@ -41,20 +41,23 @@
 %\item \(\hatn{a}{9}\) - A crown
 %\end{itemize}
 %
-%Variables can be given a non-random hat, using the command \lstinline{\hatn}:
+%Variables can be given a non-random hat, using the command \lstinline{\hat} with an optional parameter:
 %\begin{itemize}
-%\item \lstinline@\hatn{a}{0}@ produces \(\hatn{a}{0}\)
-%\item \lstinline@\hatn{a}{1}@ produces \(\hatn{a}{1}\)
-%\item \lstinline@\hatn{a}{2}@ produces \(\hatn{a}{2}\)
-%\item \lstinline@\hatn{a}{3}@ produces \(\hatn{a}{3}\)
-%\item \lstinline@\hatn{a}{4}@ produces \(\hatn{a}{4}\)
-%\item \lstinline@\hatn{a}{5}@ produces \(\hatn{a}{5}\)
-%\item \lstinline@\hatn{a}{6}@ produces \(\hatn{a}{6}\)
-%\item \lstinline@\hatn{a}{7}@ produces \(\hatn{a}{7}\)
-%\item \lstinline@\hatn{a}{8}@ produces \(\hatn{a}{8}\)
-%\item \lstinline@\hatn{a}{9}@ produces \(\hatn{a}{9}\)
+%\item \lstinline@\hat[beret]{a}@ produces \(\hat[beret]{a}\)
+%\item \lstinline@\hat[santa]{a}@ produces \(\hat[santa]{a}\)
+%\item \lstinline@\hat[scottish]{a}@ produces \(\hat[scottish]{a}\)
+%\item \lstinline@\hat[sombrero]{a}@ produces \(\hat[sombrero]{a}\)
+%\item \lstinline@\hat[wizard]{a}@ produces \(\hat[wizard]{a}\)
+%\item \lstinline@\hat[tophat]{a}@ produces \(\hat[tophat]{a}\)
+%\item \lstinline@\hat[mlga]{a}@ produces \(\hat[mlga]{a}\)
+%\item \lstinline@\hat[fez]{a}@ produces \(\hat[fez]{a}\)
+%\item \lstinline@\hat[cowboy]{a}@ produces \(\hat[cowboy]{a}\)
+%\item \lstinline@\hat[crown]{a}@ produces \(\hat[crown]{a}\)
 %\end{itemize}
 %
+%You can also pass these same options when loading the package.
+%For example, \verb@\usepackage[mlga]{realhats}@ will cause the package to use make {\LaTeX} great again hats
+%everywhere (unless an different hat is given to the \verb@\hat@ command).
 %\iffalse
 %<*documentation>
 \documentclass{article}
@@ -87,7 +90,37 @@
 \newlength{\hshif} %horizontal shift
 \newlength{\vshif} %vertical shift
 
-\renewcommand{\hat}[1]{\rand\hatn{#1}{\arabic{rand}}}
+\global\def\hatused{-1}
+\DeclareOption{beret}{\global\def\hatused{0}}
+\DeclareOption{santa}{\global\def\hatused{1}}
+\DeclareOption{scottish}{\global\def\hatused{2}}
+\DeclareOption{sombrero}{\global\def\hatused{3}}
+\DeclareOption{witch}{\global\def\hatused{4}}
+\DeclareOption{tophat}{\global\def\hatused{5}}
+\DeclareOption{mlga}{\global\def\hatused{6}}
+\DeclareOption{fez}{\global\def\hatused{7}}
+\DeclareOption{cowboy}{\global\def\hatused{8}}
+\DeclareOption{crown}{\global\def\hatused{9}}
+\ProcessOptions\relax
+
+\renewcommand{\hat}[2][]{%
+    \ifthenelse{\equal{#1}{}}{%
+        \ifthenelse{\equal{\hatused}{-1}}%
+        {\rand\hatn{#2}{\arabic{rand}}}%
+        {\hatn{#2}{\hatused}}%
+    }{%
+        \ifthenelse{\equal{#1}{beret}}{\hatn{#2}{0}}{}%
+        \ifthenelse{\equal{#1}{santa}}{\hatn{#2}{1}}{}%
+        \ifthenelse{\equal{#1}{scottish}}{\hatn{#2}{2}}{}%
+        \ifthenelse{\equal{#1}{sombrero}}{\hatn{#2}{3}}{}%
+        \ifthenelse{\equal{#1}{witch}}{\hatn{#2}{4}}{}%
+        \ifthenelse{\equal{#1}{tophat}}{\hatn{#2}{5}}{}%
+        \ifthenelse{\equal{#1}{mlga}}{\hatn{#2}{6}}{}%
+        \ifthenelse{\equal{#1}{fez}}{\hatn{#2}{7}}{}%
+        \ifthenelse{\equal{#1}{cowboy}}{\hatn{#2}{8}}{}%
+        \ifthenelse{\equal{#1}{crown}}{\hatn{#2}{9}}{}%
+    }%
+}
 
 \newcommand{\hatn}[2]{\hatnoptions{#1}{#2}{0ex}{0ex}}
 
