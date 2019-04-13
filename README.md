@@ -13,6 +13,9 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
+### Version ***
+* Added optional parameters for `\hat` and `\usepackage` to control which hats are used.
+* Added crown
 ### Version 2.0
 * Replaced tikz with stackengine
 * Added top hat, make LaTeX great again hat, fez, cowboy hat
