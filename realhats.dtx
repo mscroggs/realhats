@@ -35,6 +35,10 @@
 %\item \(\hatn{a}{3}\) - A sombrero
 %\item \(\hatn{a}{4}\) - A wizard's hat
 %\item \(\hatn{a}{5}\) - A top hat
+%\item \(\hatn{a}{6}\) - A make {\LaTeX} great again hat
+%\item \(\hatn{a}{7}\) - A fez
+%\item \(\hatn{a}{8}\) - A cowboy hat
+%\item \(\hatn{a}{9}\) - A crown
 %\end{itemize}
 %
 %Variables can be given a non-random hat, using the command \lstinline{\hatn}:
@@ -45,6 +49,10 @@
 %\item \lstinline@\hatn{a}{3}@ produces \(\hatn{a}{3}\)
 %\item \lstinline@\hatn{a}{4}@ produces \(\hatn{a}{4}\)
 %\item \lstinline@\hatn{a}{5}@ produces \(\hatn{a}{5}\)
+%\item \lstinline@\hatn{a}{6}@ produces \(\hatn{a}{6}\)
+%\item \lstinline@\hatn{a}{7}@ produces \(\hatn{a}{7}\)
+%\item \lstinline@\hatn{a}{8}@ produces \(\hatn{a}{8}\)
+%\item \lstinline@\hatn{a}{9}@ produces \(\hatn{a}{9}\)
 %\end{itemize}
 %
 %\iffalse
@@ -94,6 +102,7 @@
 \ifthenelse{\equal{#2}{6}}{\renewcommand\myhat{hats/realhats-makelatexgreatagain}\setlength{\vshif}{-0.6ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{7}}{\renewcommand\myhat{hats/realhats-fez}\setlength{\vshif}{-0.4ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{8}}{\renewcommand\myhat{hats/realhats-cowboy}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
+\ifthenelse{\equal{#2}{9}}{\renewcommand\myhat{hats/realhats-crown}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
 \addtolength{\hshif}{#3}%
 \addtolength{\vshif}{#4}%
 \stackMath %
