@@ -13,7 +13,7 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
-### Version 3.0
+### Version 3.0 (2019-04-14)
 * Added optional parameters for `\hat` and `\usepackage` to control which hats are used.
 * Added crown
 ### Version 2.0
