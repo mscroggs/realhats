@@ -25,7 +25,7 @@ $hats = Array(
     "<img class='realhat' style='left:-40px;top:-15px' src='realhats-scottish.png'>",
     "<img class='realhat' style='left:-51px;top:-20px' src='realhats-sombrero.png'>",
     "<img class='realhat' style='left:-55px;top:-12px' src='realhats-tophat.png'>",
-    "<img class='realhat' style='left:-52px;top:-30px' src='realhats-witch.png'>"
+    "<img class='realhat' style='left:-52px;top:-30px' src='realhats-witch.png'>",
     "<img class='realhat' style='left:-52px;top:-30px' src='realhats-crown.png'>"
 );
 echo($hats[array_rand($hats)]);
