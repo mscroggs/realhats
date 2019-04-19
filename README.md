@@ -16,10 +16,10 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ### Version 3.0 (2019-04-14)
 * Added optional parameters for `\hat` and `\usepackage` to control which hats are used.
 * Added crown
-### Version 2.0
+### Version 2.0 (2019-02-25)
 * Replaced tikz with stackengine
 * Added top hat, make LaTeX great again hat, fez, cowboy hat
-### Version 1.0
+### Version 1.0 (2019-02-05)
 * First working version of package
 * Added five hats
 * Added documentation
