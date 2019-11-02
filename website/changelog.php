@@ -1,6 +1,7 @@
 <?php
 
 $changelog = Array(
+    Array("2019-11-02","4.0",Array("Vectorised the hats","Added dunce cap")),
     Array("2019-04-14","3.0",Array("Added optional parameters for `\hat` and `\usepackage` to control which hats are used.",
                                    "Added crown")),
     Array("2019-02-25","2.0",Array("Replaced tikz with stackengine",

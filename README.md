@@ -13,6 +13,9 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
+### Version 4.0 (2019-11-02)
+* Vectorised the hats
+* Added dunce cap
 ### Version 3.0 (2019-04-14)
 * Added optional parameters for `\hat` and `\usepackage` to control which hats are used.
 * Added crown
