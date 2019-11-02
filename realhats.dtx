@@ -1,5 +1,5 @@
 %\iffalse meta-comment
-%Copyright (c) 2018 Matthew Scroggs & Adam Townsend
+%Copyright (c) 2019 Matthew Scroggs & Adam Townsend
 %
 %Permission is hereby granted, free of charge, to any person obtaining a copy
 %of this software and associated documentation files (the "Software"), to deal
@@ -27,25 +27,26 @@
 %To make a vector with a hat, the input \lstinline@\hat{\mathbf{a}}@ produces:
 %\[\hat{\mathbf{a}}\]
 %
-%The command \lstinline{\hat} will choose a hat randomly from six hats:
+%The command \lstinline{\hat} will choose a hat randomly from ten hats:
 %\begin{itemize}
-%\item \(\hatn{a}{0}\) - A beret
-%\item \(\hatn{a}{1}\) - A Santa hat
-%\item \(\hatn{a}{3}\) - A sombrero
-%\item \(\hatn{a}{5}\) - A top hat
-%\item \(\hatn{a}{6}\) - A make {\LaTeX} great again hat
-%\item \(\hatn{a}{7}\) - A fez
-%\item \(\hatn{a}{8}\) - A cowboy hat
-%\item \(\hatn{a}{9}\) - A crown
-%\item \(\hatn{a}{10}\) - A dunce's cap
+%\item \(\hatn{a}{beret}\) - A beret
+%\item \(\hatn{a}{santa}\) - A Santa hat
+%\item \(\hatn{a}{sombrero}\) - A sombrero
+%\item \(\hatn{a}{witch}\) - A witch's hat
+%\item \(\hatn{a}{tophat}\) - A top hat
+%\item \(\hatn{a}{mlga}\) - A make {\LaTeX} great again hat
+%\item \(\hatn{a}{fez}\) - A fez
+%\item \(\hatn{a}{cowboy}\) - A cowboy hat
+%\item \(\hatn{a}{crown}\) - A crown
+%\item \(\hatn{a}{dunce}\) - A dunce's cap
 %\end{itemize}
 %
 %Variables can be given a non-random hat, using the command \lstinline{\hat} with an optional parameter:
 %\begin{itemize}
 %\item \lstinline@\hat[beret]{a}@ produces \(\hat[beret]{a}\)
 %\item \lstinline@\hat[santa]{a}@ produces \(\hat[santa]{a}\)
-%\item \lstinline@\hat[scottish]{a}@ produces \(\hat[scottish]{a}\)
 %\item \lstinline@\hat[sombrero]{a}@ produces \(\hat[sombrero]{a}\)
+%\item \lstinline@\hat[witch]{a}@ produces \(\hat[witch]{a}\)
 %\item \lstinline@\hat[tophat]{a}@ produces \(\hat[tophat]{a}\)
 %\item \lstinline@\hat[mlga]{a}@ produces \(\hat[mlga]{a}\)
 %\item \lstinline@\hat[fez]{a}@ produces \(\hat[fez]{a}\)
@@ -76,12 +77,12 @@
 %\iffalse
 %<*realhats>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{realhats}[2019/04/14 realhats]
+\ProvidesPackage{realhats}[2019/04/14 realhats 3.0]
 
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
-\RequirePackage[first=0, last=8]{lcg}
+\RequirePackage[first=0, last=9, counter=hat]{lcg}
 \RequirePackage{calc}
 \RequirePackage{stackengine}
 
@@ -91,36 +92,48 @@
 \newlength{\vshif} %vertical shift
 
 \global\def\hatused{-1}
-\DeclareOption{beret}{\global\def\hatused{0}}
-\DeclareOption{santa}{\global\def\hatused{1}}
-\DeclareOption{scottish}{\global\def\hatused{2}}
-\DeclareOption{sombrero}{\global\def\hatused{3}}
-\DeclareOption{witch}{\global\def\hatused{4}}
-\DeclareOption{tophat}{\global\def\hatused{5}}
-\DeclareOption{mlga}{\global\def\hatused{6}}
-\DeclareOption{fez}{\global\def\hatused{7}}
-\DeclareOption{cowboy}{\global\def\hatused{8}}
-\DeclareOption{crown}{\global\def\hatused{9}}
-\DeclareOption{dunce}{\global\def\hatused{10}}
+\DeclareOption{beret}{\global\def\hatused{beret}}
+\DeclareOption{santa}{\global\def\hatused{santa}}
+\DeclareOption{sombrero}{\global\def\hatused{sombrero}}
+\DeclareOption{witch}{\global\def\hatused{witch}}
+\DeclareOption{tophat}{\global\def\hatused{tophat}}
+\DeclareOption{mlga}{\global\def\hatused{mlga}}
+\DeclareOption{fez}{\global\def\hatused{fez}}
+\DeclareOption{cowboy}{\global\def\hatused{cowboy}}
+\DeclareOption{crown}{\global\def\hatused{crown}}
+\DeclareOption{dunce}{\global\def\hatused{dunce}}
 \ProcessOptions\relax
+
+\newcommand{\gethat}{%
+    \ifcase\thehat beret%
+        \or santa%
+        \or sombrero%
+        \or witch%
+        \or tophat%
+        \or mlga%
+        \or fez%
+        \or cowboy%
+        \or crown%
+        \or dunce%
+    \fi
+}
 
 \renewcommand{\hat}[2][]{%
     \ifthenelse{\equal{#1}{}}{%
         \ifthenelse{\equal{\hatused}{-1}}%
-        {\rand\hatn{#2}{\arabic{rand}}}%
+        {\rand\hatn{#2}{\gethat}}%
         {\hatn{#2}{\hatused}}%
     }{%
-        \ifthenelse{\equal{#1}{beret}}{\hatn{#2}{0}}{}%
-        \ifthenelse{\equal{#1}{santa}}{\hatn{#2}{1}}{}%
-        \ifthenelse{\equal{#1}{scottish}}{\hatn{#2}{2}}{}%
-        \ifthenelse{\equal{#1}{sombrero}}{\hatn{#2}{3}}{}%
-        \ifthenelse{\equal{#1}{witch}}{\hatn{#2}{4}}{}%
-        \ifthenelse{\equal{#1}{tophat}}{\hatn{#2}{5}}{}%
-        \ifthenelse{\equal{#1}{mlga}}{\hatn{#2}{6}}{}%
-        \ifthenelse{\equal{#1}{fez}}{\hatn{#2}{7}}{}%
-        \ifthenelse{\equal{#1}{cowboy}}{\hatn{#2}{8}}{}%
-        \ifthenelse{\equal{#1}{crown}}{\hatn{#2}{9}}{}%
-        \ifthenelse{\equal{#1}{dunce}}{\hatn{#2}{10}}{}%
+        \ifthenelse{\equal{#1}{beret}}{\hatn{#2}{beret}}{}%
+        \ifthenelse{\equal{#1}{santa}}{\hatn{#2}{santa}}{}%
+        \ifthenelse{\equal{#1}{sombrero}}{\hatn{#2}{sombrero}}{}%
+        \ifthenelse{\equal{#1}{witch}}{\hatn{#2}{witch}}{}%
+        \ifthenelse{\equal{#1}{tophat}}{\hatn{#2}{tophat}}{}%
+        \ifthenelse{\equal{#1}{mlga}}{\hatn{#2}{mlga}}{}%
+        \ifthenelse{\equal{#1}{fez}}{\hatn{#2}{fez}}{}%
+        \ifthenelse{\equal{#1}{cowboy}}{\hatn{#2}{cowboy}}{}%
+        \ifthenelse{\equal{#1}{crown}}{\hatn{#2}{crown}}{}%
+        \ifthenelse{\equal{#1}{dunce}}{\hatn{#2}{dunce}}{}%
     }%
 }
 
@@ -129,16 +142,16 @@
 \newcommand{\hatnoptions}[4]{%
 \setlength{\hshif}{1pt}
 \setlength{\hatwidth}{2ex}
-\ifthenelse{\equal{#2}{0}}{\renewcommand\myhat{hats/realhats-beret}\setlength{\vshif}{-0.6ex} \setlength{\hshif}{0.5ex} }{}%
-\ifthenelse{\equal{#2}{1}}{\renewcommand\myhat{hats/realhats-santa}\setlength{\vshif}{-0.1ex} }{}%
-\ifthenelse{\equal{#2}{3}}{\renewcommand\myhat{hats/realhats-sombrero}\setlength{\vshif}{-0.17ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{4}}{\renewcommand\myhat{hats/realhats-witch}\setlength{\vshif}{-0.12ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{5}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{6}}{\renewcommand\myhat{hats/realhats-makelatexgreatagain}\setlength{\vshif}{-0.6ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{7}}{\renewcommand\myhat{hats/realhats-fez}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{8}}{\renewcommand\myhat{hats/realhats-cowboy}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
-\ifthenelse{\equal{#2}{9}}{\renewcommand\myhat{hats/realhats-crown}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
-\ifthenelse{\equal{#2}{10}}{\renewcommand\myhat{hats/realhats-dunce}\setlength{\vshif}{-0.3ex} \setlength{\hatwidth}{1.4ex}}{}%
+\ifthenelse{\equal{#2}{beret}}{\renewcommand\myhat{hats/realhats-beret}\setlength{\vshif}{-0.6ex} \setlength{\hshif}{0.5ex} }{}%
+\ifthenelse{\equal{#2}{santa}}{\renewcommand\myhat{hats/realhats-santa}\setlength{\vshif}{-0.1ex} }{}%
+\ifthenelse{\equal{#2}{sombrero}}{\renewcommand\myhat{hats/realhats-sombrero}\setlength{\vshif}{-0.17ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{witch}}{\renewcommand\myhat{hats/realhats-witch}\setlength{\vshif}{-0.12ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{tophat}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{mlga}}{\renewcommand\myhat{hats/realhats-makelatexgreatagain}\setlength{\vshif}{-0.6ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{fez}}{\renewcommand\myhat{hats/realhats-fez}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{cowboy}}{\renewcommand\myhat{hats/realhats-cowboy}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
+\ifthenelse{\equal{#2}{crown}}{\renewcommand\myhat{hats/realhats-crown}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
+\ifthenelse{\equal{#2}{dunce}}{\renewcommand\myhat{hats/realhats-dunce}\setlength{\vshif}{-0.3ex} \setlength{\hatwidth}{1.4ex}}{}%
 \addtolength{\hshif}{#3}%
 \addtolength{\vshif}{#4}%
 \stackMath %
