@@ -1,2 +1,2 @@
 pdflatex hats.tex
-convert -density 250 hats.pdf[0] -quality 100 hats.png
+pdftoppm -rx 300 -ry 300 -png hats.pdf > hats.png
