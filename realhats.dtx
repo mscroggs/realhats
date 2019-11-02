@@ -31,14 +31,13 @@
 %\begin{itemize}
 %\item \(\hatn{a}{0}\) - A beret
 %\item \(\hatn{a}{1}\) - A Santa hat
-%\item \(\hatn{a}{2}\) - A Scottish hat
 %\item \(\hatn{a}{3}\) - A sombrero
-%\item \(\hatn{a}{4}\) - A wizard's hat
 %\item \(\hatn{a}{5}\) - A top hat
 %\item \(\hatn{a}{6}\) - A make {\LaTeX} great again hat
 %\item \(\hatn{a}{7}\) - A fez
 %\item \(\hatn{a}{8}\) - A cowboy hat
 %\item \(\hatn{a}{9}\) - A crown
+%\item \(\hatn{a}{10}\) - A dunce's cap
 %\end{itemize}
 %
 %Variables can be given a non-random hat, using the command \lstinline{\hat} with an optional parameter:
@@ -47,12 +46,12 @@
 %\item \lstinline@\hat[santa]{a}@ produces \(\hat[santa]{a}\)
 %\item \lstinline@\hat[scottish]{a}@ produces \(\hat[scottish]{a}\)
 %\item \lstinline@\hat[sombrero]{a}@ produces \(\hat[sombrero]{a}\)
-%\item \lstinline@\hat[wizard]{a}@ produces \(\hat[wizard]{a}\)
 %\item \lstinline@\hat[tophat]{a}@ produces \(\hat[tophat]{a}\)
 %\item \lstinline@\hat[mlga]{a}@ produces \(\hat[mlga]{a}\)
 %\item \lstinline@\hat[fez]{a}@ produces \(\hat[fez]{a}\)
 %\item \lstinline@\hat[cowboy]{a}@ produces \(\hat[cowboy]{a}\)
 %\item \lstinline@\hat[crown]{a}@ produces \(\hat[crown]{a}\)
+%\item \lstinline@\hat[dunce]{a}@ produces \(\hat[dunce]{a}\)
 %\end{itemize}
 %
 %You can also pass these same options when loading the package.
@@ -87,6 +86,7 @@
 \RequirePackage{stackengine}
 
 \newcommand\myhat{}
+\newlength{\hatwidth} %hat width
 \newlength{\hshif} %horizontal shift
 \newlength{\vshif} %vertical shift
 
@@ -101,6 +101,7 @@
 \DeclareOption{fez}{\global\def\hatused{7}}
 \DeclareOption{cowboy}{\global\def\hatused{8}}
 \DeclareOption{crown}{\global\def\hatused{9}}
+\DeclareOption{dunce}{\global\def\hatused{10}}
 \ProcessOptions\relax
 
 \renewcommand{\hat}[2][]{%
@@ -119,6 +120,7 @@
         \ifthenelse{\equal{#1}{fez}}{\hatn{#2}{7}}{}%
         \ifthenelse{\equal{#1}{cowboy}}{\hatn{#2}{8}}{}%
         \ifthenelse{\equal{#1}{crown}}{\hatn{#2}{9}}{}%
+        \ifthenelse{\equal{#1}{dunce}}{\hatn{#2}{10}}{}%
     }%
 }
 
@@ -126,20 +128,21 @@
 
 \newcommand{\hatnoptions}[4]{%
 \setlength{\hshif}{1pt}
+\setlength{\hatwidth}{2ex}
 \ifthenelse{\equal{#2}{0}}{\renewcommand\myhat{hats/realhats-beret}\setlength{\vshif}{-0.6ex} \setlength{\hshif}{0.5ex} }{}%
 \ifthenelse{\equal{#2}{1}}{\renewcommand\myhat{hats/realhats-santa}\setlength{\vshif}{-0.1ex} }{}%
-\ifthenelse{\equal{#2}{2}}{\renewcommand\myhat{hats/realhats-scottish}\setlength{\vshif}{-0.7ex} \setlength{\hshif}{0.6ex}}{}%
 \ifthenelse{\equal{#2}{3}}{\renewcommand\myhat{hats/realhats-sombrero}\setlength{\vshif}{-0.17ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{4}}{\renewcommand\myhat{hats/realhats-witch}\setlength{\vshif}{-0.12ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{5}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.6ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{6}}{\renewcommand\myhat{hats/realhats-makelatexgreatagain}\setlength{\vshif}{-0.6ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{7}}{\renewcommand\myhat{hats/realhats-fez}\setlength{\vshif}{-0.4ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{5}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{6}}{\renewcommand\myhat{hats/realhats-makelatexgreatagain}\setlength{\vshif}{-0.6ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{7}}{\renewcommand\myhat{hats/realhats-fez}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{8}}{\renewcommand\myhat{hats/realhats-cowboy}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
 \ifthenelse{\equal{#2}{9}}{\renewcommand\myhat{hats/realhats-crown}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
+\ifthenelse{\equal{#2}{10}}{\renewcommand\myhat{hats/realhats-dunce}\setlength{\vshif}{-0.3ex} \setlength{\hatwidth}{1.4ex}}{}%
 \addtolength{\hshif}{#3}%
 \addtolength{\vshif}{#4}%
 \stackMath %
-\stackon[\vshif]{#1}{\hspace{\hshif}\includegraphics[width=2ex]{\myhat}}
+\stackon[\vshif]{#1}{\hspace{\hshif}\includegraphics[width=\hatwidth]{\myhat}}
 }
 %</realhats>
 %\fi

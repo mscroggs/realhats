@@ -10,3 +10,5 @@ tmp
 tmp/*
 website/*.png
 test.*
+
+!hats/*.pdf

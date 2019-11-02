@@ -28,4 +28,8 @@ zip:
 	cd $(MYTMP)/zip; zip -r $(OUTPUT)/realhats .
 
 html:
-	for i in hats/*.png ; do convert "$$i" -resize 100x500 website/"$${i#hats/}" ; done
+	for i in hats/*.pdf ; do pdftoppm -png "$$i" > "$(MYTMP)/web.png" ;\
+		filename="$${i#hats/}" ;\
+		filename="$${filename%.pdf}" ;\
+		convert "$(MYTMP)/web.png" -resize 100x500 "website/$$filename.png" ;\
+	done
