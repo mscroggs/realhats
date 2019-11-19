@@ -1,6 +1,7 @@
 <?php
 
 $changelog = Array(
+    Array("2019-11-19","5.0",Array("Removed the 'make LaTeX great again' cap")),
     Array("2019-11-02","4.0",Array("Vectorised the hats","Added dunce cap")),
     Array("2019-04-14","3.0",Array("Added optional parameters for `\hat` and `\usepackage` to control which hats are used.",
                                    "Added crown")),
