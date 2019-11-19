@@ -13,6 +13,9 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
+### Next version
+* Added Scottish hat
+* Added police hat
 ### Version 5.0 (2019-11-19)
 * Added Ash's hat
 ### Version 4.0 (2019-11-02)
