@@ -5,7 +5,7 @@ MYTMP = $(HERE)/tmp
 TEXOUT = $(OUTPUT)
 STYOUT = $(OUTPUT)
 
-.PHONY: all sty doc ctan zip html
+.PHONY: all sty doc ctan zip
 
 all: sty doc ctan html
 
@@ -26,10 +26,3 @@ zip:
 	cp $(HERE)/readme_images/*.png $(MYTMP)/zip/$(THIS)/readme_images/
 	cp $(HERE)/README.md $(TEXOUT)/realhats.pdf $(HERE)/realhats.dtx $(HERE)/realhats.ins $(MYTMP)/zip/$(THIS)
 	cd $(MYTMP)/zip; zip -r $(OUTPUT)/realhats .
-
-html:
-	for i in hats/*.pdf ; do pdftoppm -png "$$i" > "$(MYTMP)/web.png" ;\
-		filename="$${i#hats/}" ;\
-		filename="$${filename%.pdf}" ;\
-		convert "$(MYTMP)/web.png" -resize 100x500 "website/$$filename.png" ;\
-	done
