@@ -23,7 +23,7 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 * Added crown
 ### Version 2.0 (2019-02-25)
 * Replaced tikz with stackengine
-* Added top hat, make LaTeX great again hat, fez, cowboy hat
+* Added top hat, fez, cowboy hat
 ### Version 1.0 (2019-02-05)
 * First working version of package
 * Added five hats
