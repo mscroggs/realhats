@@ -34,7 +34,7 @@
 %\item \(\hatn{a}{sombrero}\) - A sombrero
 %\item \(\hatn{a}{witch}\) - A witch's hat
 %\item \(\hatn{a}{tophat}\) - A top hat
-%\item \(\hatn{a}{mlga}\) - A make {\LaTeX} great again hat
+%\item \(\hatn{a}{ash}\) - Ash's hat
 %\item \(\hatn{a}{fez}\) - A fez
 %\item \(\hatn{a}{cowboy}\) - A cowboy hat
 %\item \(\hatn{a}{crown}\) - A crown
@@ -48,7 +48,7 @@
 %\item \lstinline@\hat[sombrero]{a}@ produces \(\hat[sombrero]{a}\)
 %\item \lstinline@\hat[witch]{a}@ produces \(\hat[witch]{a}\)
 %\item \lstinline@\hat[tophat]{a}@ produces \(\hat[tophat]{a}\)
-%\item \lstinline@\hat[mlga]{a}@ produces \(\hat[mlga]{a}\)
+%\item \lstinline@\hat[ash]{a}@ produces \(\hat[ash]{a}\)
 %\item \lstinline@\hat[fez]{a}@ produces \(\hat[fez]{a}\)
 %\item \lstinline@\hat[cowboy]{a}@ produces \(\hat[cowboy]{a}\)
 %\item \lstinline@\hat[crown]{a}@ produces \(\hat[crown]{a}\)
@@ -56,7 +56,7 @@
 %\end{itemize}
 %
 %You can also pass these same options when loading the package.
-%For example, \verb@\usepackage[mlga]{realhats}@ will cause the package to use make {\LaTeX} great again hats
+%For example, \verb@\usepackage[ash]{realhats}@ will cause the package to use make {\LaTeX} great again hats
 %everywhere (unless an different hat is given to the \verb@\hat@ command).
 %\iffalse
 %<*documentation>
@@ -97,7 +97,7 @@
 \DeclareOption{sombrero}{\global\def\hatused{sombrero}}
 \DeclareOption{witch}{\global\def\hatused{witch}}
 \DeclareOption{tophat}{\global\def\hatused{tophat}}
-\DeclareOption{mlga}{\global\def\hatused{mlga}}
+\DeclareOption{ash}{\global\def\hatused{ash}}
 \DeclareOption{fez}{\global\def\hatused{fez}}
 \DeclareOption{cowboy}{\global\def\hatused{cowboy}}
 \DeclareOption{crown}{\global\def\hatused{crown}}
@@ -110,7 +110,7 @@
         \or sombrero%
         \or witch%
         \or tophat%
-        \or mlga%
+        \or ash%
         \or fez%
         \or cowboy%
         \or crown%
@@ -129,7 +129,7 @@
         \ifthenelse{\equal{#1}{sombrero}}{\hatn{#2}{sombrero}}{}%
         \ifthenelse{\equal{#1}{witch}}{\hatn{#2}{witch}}{}%
         \ifthenelse{\equal{#1}{tophat}}{\hatn{#2}{tophat}}{}%
-        \ifthenelse{\equal{#1}{mlga}}{\hatn{#2}{mlga}}{}%
+        \ifthenelse{\equal{#1}{ash}}{\hatn{#2}{ash}}{}%
         \ifthenelse{\equal{#1}{fez}}{\hatn{#2}{fez}}{}%
         \ifthenelse{\equal{#1}{cowboy}}{\hatn{#2}{cowboy}}{}%
         \ifthenelse{\equal{#1}{crown}}{\hatn{#2}{crown}}{}%
@@ -147,7 +147,7 @@
 \ifthenelse{\equal{#2}{sombrero}}{\renewcommand\myhat{hats/realhats-sombrero}\setlength{\vshif}{-0.17ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{witch}}{\renewcommand\myhat{hats/realhats-witch}\setlength{\vshif}{-0.12ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{tophat}}{\renewcommand\myhat{hats/realhats-tophat}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
-\ifthenelse{\equal{#2}{mlga}}{\renewcommand\myhat{hats/realhats-makelatexgreatagain}\setlength{\vshif}{-0.6ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{ash}}{\renewcommand\myhat{hats/realhats-ash}\setlength{\vshif}{-0.6ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{fez}}{\renewcommand\myhat{hats/realhats-fez}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{cowboy}}{\renewcommand\myhat{hats/realhats-cowboy}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
 \ifthenelse{\equal{#2}{crown}}{\renewcommand\myhat{hats/realhats-crown}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%

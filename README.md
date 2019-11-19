@@ -13,6 +13,8 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
+### Version 5.0 (2019-11-19)
+* Added Ash's hat
 ### Version 4.0 (2019-11-02)
 * Vectorised the hats
 * Added dunce cap
