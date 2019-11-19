@@ -7,7 +7,7 @@ STYOUT = $(OUTPUT)
 
 .PHONY: all sty doc ctan zip
 
-all: sty doc ctan html
+all: sty doc ctan
 
 ctan: sty doc zip
 
