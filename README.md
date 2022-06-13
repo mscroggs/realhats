@@ -13,6 +13,11 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
+### Version 6.0 (2022-06-13
+* Added Scottish hat
+* Added police hat
+* Added birthday hat
+* Added mortarboard
 ### Version 5.0 (2019-11-19)
 * Added Ash's hat
 ### Version 4.0 (2019-11-02)
@@ -28,7 +33,6 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 * First working version of package
 * Added five hats
 * Added documentation
-
 
 ## Licensing
 This work may be distributed and/or modified under the conditions of the [MIT license](LICENSE.txt).

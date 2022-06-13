@@ -27,37 +27,50 @@
 %To make a vector with a hat, the input \lstinline@\hat{\mathbf{a}}@ produces:
 %\[\hat{\mathbf{a}}\]
 %
-%The command \lstinline{\hat} will choose a hat randomly from ten hats:
-%\begin{itemize}
-%\item \(\hatn{a}{beret}\) - A beret
-%\item \(\hatn{a}{santa}\) - A Santa hat
-%\item \(\hatn{a}{sombrero}\) - A sombrero
-%\item \(\hatn{a}{witch}\) - A witch's hat
-%\item \(\hatn{a}{tophat}\) - A top hat
-%\item \(\hatn{a}{ash}\) - Ash's hat
-%\item \(\hatn{a}{fez}\) - A fez
-%\item \(\hatn{a}{cowboy}\) - A cowboy hat
-%\item \(\hatn{a}{crown}\) - A crown
-%\item \(\hatn{a}{dunce}\) - A dunce's cap
-%\end{itemize}
+%The command \lstinline{\hat} will choose a hat randomly from thirteen hats:
+%\begin{center}
+%\begin{tabular}{cp{4cm}cl}
+%\(\hatn{a}{beret}\) & beret &
+%\(\hatn{a}{santa}\) & Santa hat \\
+%\(\hatn{a}{sombrero}\) & sombrero &
+%\(\hatn{a}{witch}\)& witch's hat \\
+%\(\hatn{a}{tophat}\) & top hat &
+%\(\hatn{a}{ash}\) & Ash's hat \\
+%\(\hatn{a}{fez}\) & fez &
+%\(\hatn{a}{cowboy}\) & cowboy hat \\
+%\(\hatn{a}{crown}\) & crown &
+%\(\hatn{a}{dunce}\) & dunce's cap \\
+%\(\hatn{a}{policeman}\) & policeman's hat \qquad&
+%\(\hatn{a}{scottish}\) & Scottish hat \\
+%\(\hatn{a}{birthday}\) & birthday hat & 
+%\(\hatn{a}{mortarboard}\) & mortarboard
+%\end{tabular}
+%\end{center}
 %
 %Variables can be given a non-random hat, using the command \lstinline{\hat} with an optional parameter:
-%\begin{itemize}
-%\item \lstinline@\hat[beret]{a}@ produces \(\hat[beret]{a}\)
-%\item \lstinline@\hat[santa]{a}@ produces \(\hat[santa]{a}\)
-%\item \lstinline@\hat[sombrero]{a}@ produces \(\hat[sombrero]{a}\)
-%\item \lstinline@\hat[witch]{a}@ produces \(\hat[witch]{a}\)
-%\item \lstinline@\hat[tophat]{a}@ produces \(\hat[tophat]{a}\)
-%\item \lstinline@\hat[ash]{a}@ produces \(\hat[ash]{a}\)
-%\item \lstinline@\hat[fez]{a}@ produces \(\hat[fez]{a}\)
-%\item \lstinline@\hat[cowboy]{a}@ produces \(\hat[cowboy]{a}\)
-%\item \lstinline@\hat[crown]{a}@ produces \(\hat[crown]{a}\)
-%\item \lstinline@\hat[dunce]{a}@ produces \(\hat[dunce]{a}\)
-%\end{itemize}
+%\begin{center}
+%\begin{tabular}{lp{2cm}ll}
+% \textbf{command} & \textbf{produces} & % \textbf{command} & \textbf{produces} \\
+% \lstinline@\hat[beret]{a}@ & \(\hat[beret]{a}\) &
+% \lstinline@\hat[santa]{a}@ & \(\hat[santa]{a}\) \\
+% \lstinline@\hat[sombrero]{a}@ & \(\hat[sombrero]{a}\) &
+% \lstinline@\hat[witch]{a}@ & \(\hat[witch]{a}\) \\
+% \lstinline@\hat[tophat]{a}@ & \(\hat[tophat]{a}\) &
+% \lstinline@\hat[ash]{a}@ & \(\hat[ash]{a}\) \\
+% \lstinline@\hat[fez]{a}@ & \(\hat[fez]{a}\) &
+% \lstinline@\hat[cowboy]{a}@ & \(\hat[cowboy]{a}\) \\
+% \lstinline@\hat[crown]{a}@ & \(\hat[crown]{a}\) &
+% \lstinline@\hat[dunce]{a}@ & \(\hat[dunce]{a}\) \\
+% \lstinline@\hat[policeman]{a}@ & \(\hat[policeman]{a}\) &
+% \lstinline@\hat[scottish]{a}@ & \(\hat[scottish]{a}\) \\
+% \lstinline@\hat[birthday]{a}@ & \(\hat[birthday]{a}\) &
+% \lstinline@\hat[mortarboard]{a}@ & \(\hat[mortarboard]{a}\)
+%\end{tabular}
+%\end{center}
 %
 %You can also pass these same options when loading the package.
-%For example, \verb@\usepackage[ash]{realhats}@ will cause the package to use make {\LaTeX} great again hats
-%everywhere (unless an different hat is given to the \verb@\hat@ command).
+%For example, \verb@\usepackage[cowboy]{realhats}@ will cause the package to use cowboy hats
+%everywhere (unless a different hat is given to the \verb@\hat@ command).
 %\iffalse
 %<*documentation>
 \documentclass{article}
@@ -67,6 +80,7 @@
 \lstset{basicstyle=\ttfamily\footnotesize,commentstyle=\color{white},language=TeX}
 \title{realhats v\input{VERSION}}
 \author{Matthew W.~Scroggs \& Adam K.~Townsend}
+\setlength\parindent{0pt}
 \begin{document}
 \maketitle
     \DocInput{realhats.dtx}
@@ -77,12 +91,12 @@
 %\iffalse
 %<*realhats>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{realhats}[2019/04/14 realhats 3.0]
+\ProvidesPackage{realhats}[2022/06/13 realhats 6.0]
 
 \RequirePackage{amsmath}
 \RequirePackage{graphicx}
 \RequirePackage{ifthen}
-\RequirePackage[first=0, last=9, counter=hat]{lcg}
+\RequirePackage[first=0, last=11, counter=hat]{lcg}
 \RequirePackage{calc}
 \RequirePackage{stackengine}
 
@@ -102,6 +116,10 @@
 \DeclareOption{cowboy}{\global\def\hatused{cowboy}}
 \DeclareOption{crown}{\global\def\hatused{crown}}
 \DeclareOption{dunce}{\global\def\hatused{dunce}}
+\DeclareOption{policeman}{\global\def\hatused{policeman}}
+\DeclareOption{scottish}{\global\def\hatused{scottish}}
+\DeclareOption{birthday}{\global\def\hatused{birthday}}
+\DeclareOption{mortarboard}{\global\def\hatused{mortarboard}}
 \ProcessOptions\relax
 
 \newcommand{\gethat}{%
@@ -115,6 +133,10 @@
         \or cowboy%
         \or crown%
         \or dunce%
+        \or policeman%
+        \or scottish%
+        \or birthday%
+        \or mortarboard%
     \fi
 }
 
@@ -134,6 +156,10 @@
         \ifthenelse{\equal{#1}{cowboy}}{\hatn{#2}{cowboy}}{}%
         \ifthenelse{\equal{#1}{crown}}{\hatn{#2}{crown}}{}%
         \ifthenelse{\equal{#1}{dunce}}{\hatn{#2}{dunce}}{}%
+        \ifthenelse{\equal{#1}{policeman}}{\hatn{#2}{policeman}}{}%
+        \ifthenelse{\equal{#1}{scottish}}{\hatn{#2}{scottish}}{}%
+        \ifthenelse{\equal{#1}{birthday}}{\hatn{#2}{birthday}}{}%
+        \ifthenelse{\equal{#1}{mortarboard}}{\hatn{#2}{mortarboard}}{}%
     }%
 }
 
@@ -152,6 +178,10 @@
 \ifthenelse{\equal{#2}{cowboy}}{\renewcommand\myhat{hats/realhats-cowboy}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
 \ifthenelse{\equal{#2}{crown}}{\renewcommand\myhat{hats/realhats-crown}\setlength{\vshif}{-0.3ex} \setlength{\hshif}{0.2ex}}{}%
 \ifthenelse{\equal{#2}{dunce}}{\renewcommand\myhat{hats/realhats-dunce}\setlength{\vshif}{-0.3ex} \setlength{\hatwidth}{1.4ex}}{}%
+\ifthenelse{\equal{#2}{policeman}}{\renewcommand\myhat{hats/realhats-policeman}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
+\ifthenelse{\equal{#2}{scottish}}{\renewcommand\myhat{hats/realhats-scottish}\setlength{\vshif}{-0.6ex} \setlength{\hshif}{0.5ex} }{}%
+\ifthenelse{\equal{#2}{birthday}}{\renewcommand\myhat{hats/realhats-birthday}\setlength{\vshif}{-0.2ex} \setlength{\hshif}{-0.1ex} }{}%
+\ifthenelse{\equal{#2}{mortarboard}}{\renewcommand\myhat{hats/realhats-mortarboard}\setlength{\vshif}{-0.15ex} \setlength{\hshif}{0ex} }{}%
 \addtolength{\hshif}{#3}%
 \addtolength{\vshif}{#4}%
 \stackMath %
