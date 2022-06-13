@@ -13,7 +13,7 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
-### Version 6.0 (2022-06-13
+### Version 6.0 (2022-06-13)
 * Added Scottish hat
 * Added police hat
 * Added birthday hat
