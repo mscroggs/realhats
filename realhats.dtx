@@ -27,7 +27,7 @@
 %To make a vector with a hat, the input \lstinline@\hat{\mathbf{a}}@ produces:
 %\[\hat{\mathbf{a}}\]
 %
-%The command \lstinline{\hat} will choose a hat randomly from twelve hats:
+%The command \lstinline{\hat} will choose a hat randomly from thirteen hats:
 %\begin{center}
 %\begin{tabular}{cp{4cm}cl}
 %\(\hatn{a}{beret}\) & beret &
@@ -42,6 +42,7 @@
 %\(\hatn{a}{dunce}\) & dunce's cap \\
 %\(\hatn{a}{policeman}\) & policeman's hat \qquad&
 %\(\hatn{a}{scottish}\) & Scottish hat \\
+%\(\hatn{a}{birthday}\) & birthday hat
 %\end{tabular}
 %\end{center}
 %
@@ -60,7 +61,8 @@
 % \lstinline@\hat[crown]{a}@ & \(\hat[crown]{a}\) &
 % \lstinline@\hat[dunce]{a}@ & \(\hat[dunce]{a}\) \\
 % \lstinline@\hat[policeman]{a}@ & \(\hat[policeman]{a}\) &
-% \lstinline@\hat[scottish]{a}@ & \(\hat[scottish]{a}\)
+% \lstinline@\hat[scottish]{a}@ & \(\hat[scottish]{a}\) \\
+% \lstinline@\hat[birthdya]{a}@ & \(\hat[birthday]{a}\)
 %\end{tabular}
 %\end{center}
 %
@@ -114,6 +116,7 @@
 \DeclareOption{dunce}{\global\def\hatused{dunce}}
 \DeclareOption{policeman}{\global\def\hatused{policeman}}
 \DeclareOption{scottish}{\global\def\hatused{scottish}}
+\DeclareOption{birthday}{\global\def\hatused{birthday}}
 \ProcessOptions\relax
 
 \newcommand{\gethat}{%
@@ -128,7 +131,8 @@
         \or crown%
         \or dunce%
         \or policeman%
-        \or scottish%        
+        \or scottish%
+        \or birthday%
     \fi
 }
 
@@ -150,6 +154,7 @@
         \ifthenelse{\equal{#1}{dunce}}{\hatn{#2}{dunce}}{}%
         \ifthenelse{\equal{#1}{policeman}}{\hatn{#2}{policeman}}{}%
         \ifthenelse{\equal{#1}{scottish}}{\hatn{#2}{scottish}}{}%
+        \ifthenelse{\equal{#1}{birthday}}{\hatn{#2}{birthday}}{}%
     }%
 }
 
@@ -170,6 +175,7 @@
 \ifthenelse{\equal{#2}{dunce}}{\renewcommand\myhat{hats/realhats-dunce}\setlength{\vshif}{-0.3ex} \setlength{\hatwidth}{1.4ex}}{}%
 \ifthenelse{\equal{#2}{policeman}}{\renewcommand\myhat{hats/realhats-policeman}\setlength{\vshif}{-0.4ex} \setlength{\hatwidth}{1.8ex} \addtolength{\hshif}{-1pt}}{}%
 \ifthenelse{\equal{#2}{scottish}}{\renewcommand\myhat{hats/realhats-scottish}\setlength{\vshif}{-0.6ex} \setlength{\hshif}{0.5ex} }{}%
+\ifthenelse{\equal{#2}{birthday}}{\renewcommand\myhat{hats/realhats-birthday}\setlength{\vshif}{-0.2ex} \setlength{\hshif}{0.2ex} }{}%
 \addtolength{\hshif}{#3}%
 \addtolength{\vshif}{#4}%
 \stackMath %
