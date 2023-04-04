@@ -13,6 +13,8 @@ Regretfully brought into the world by [Matthew Scroggs](https://github.com/mscro
 ![Letters with hats on](readme_images/hats.png)
 
 ## Changelog
+### Version 7.0 (2023-04-04)
+* Added aperiodic tile hat
 ### Version 6.0 (2022-06-13)
 * Added Scottish hat
 * Added police hat
