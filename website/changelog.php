@@ -1,8 +1,8 @@
 <?php
 
 $changelog = Array(
-    Array("2023-04-05","7.1",Array("Reflected dark blue tile hat"),
-    Array("2023-04-04","7.0",Array("Added aperiodic tile hat"),
+    Array("2023-04-05","7.1",Array("Reflected dark blue tile hat")),
+    Array("2023-04-04","7.0",Array("Added aperiodic tile hat")),
     Array("2022-06-13","6.0",Array("Added Scottish hat", "Added police hat", "Added birthday hat", "Added mortarboard")),
     Array("2019-11-19","5.0",Array("Added Ash's hat")),
     Array("2019-11-02","4.0",Array("Vectorised the hats","Added dunce cap")),
